@@ -2,6 +2,7 @@ import { useReducer } from 'react';
 import { useDispatch } from 'react-redux';
 import { registerThunk } from '../../redux/auth/auth-thunk';
 import { Form, InputContainer, Input, Button } from './RegisterForm.styled';
+import { Link } from './../AuthNav/AuthNav.styled';
 
 const initialState = {
   name: '',
@@ -65,6 +66,7 @@ const RegisterForm = () => {
         />
       </InputContainer>
       <Button type="submit">Зареєструватися</Button>
+      <Link to="/login">Do you already an account? Then click here! </Link>
     </Form>
   );
 };

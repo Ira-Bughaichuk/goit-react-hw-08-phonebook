@@ -1,5 +1,6 @@
 import React, { useReducer } from 'react';
 import { useDispatch } from 'react-redux';
+import { Link } from 'react-router-dom';
 import { loginThunk } from '../../redux/auth/auth-thunk';
 import { Form, Label, Input, Button } from './LoginForm.styled';
 
@@ -58,6 +59,7 @@ function LoginForm() {
         />
       </Label>
       <Button type="submit">Увійти</Button>
+      <Link to="/register">Are you not registered yet? Then click here! </Link>
     </Form>
   );
 }
