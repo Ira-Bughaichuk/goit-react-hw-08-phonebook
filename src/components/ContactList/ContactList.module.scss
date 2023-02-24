@@ -1,0 +1,33 @@
+.list {
+  padding: 20px;
+}
+
+.item {
+  max-width: 320px;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+
+  &__text {
+    font-size: 18px;
+    color: black;
+    font-weight: 500;
+  }
+  &__button {
+    border: 1px solid black;
+    outline: none;
+    cursor: pointer;
+    display: block;
+    border-radius: 5px;
+    color: black;
+    padding: 4px 15px;
+
+    &:hover,
+    &:focus {
+      border: none;
+      background-color: rgb(115, 90, 230);
+    }
+  }
+}

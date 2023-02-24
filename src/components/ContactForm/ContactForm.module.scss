@@ -1,0 +1,40 @@
+.form {
+  &__input {
+    font-size: 18px;
+    margin-top: 10px;
+    outline: none;
+    display: block;
+    padding: 8px;
+    &:not(:last-child) {
+      margin-bottom: 15px;
+    }
+
+    &:focus {
+      border: none;
+      box-shadow: 2px 2px 5px 2px rgb(115, 90, 230);
+    }
+  }
+
+  &__label {
+    display: block;
+    font-size: 18px;
+    font-weight: 500;
+    color: black;
+  }
+  &__button {
+    border: 1px solid black;
+    outline: none;
+    cursor: pointer;
+    display: block;
+    border-radius: 5px;
+    color: black;
+    padding: 8px 15px;
+    margin-bottom: 20px;
+
+    &:hover,
+    &:focus {
+      border: none;
+      background-color: rgb(115, 90, 230);
+    }
+  }
+}
