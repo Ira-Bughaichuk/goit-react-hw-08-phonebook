@@ -1,11 +1,18 @@
 import { useSelector } from 'react-redux';
-import { Header } from './AppBar.styled';
 import { UserMenu } from './../UserMenu/UserMenu';
 import { AuthNav } from './../AuthNav/AuthNav';
 
 import { selectToken } from 'redux/auth/auth-selector';
+import scss from './AppBar.module.scss';
 
 export const AppBar = () => {
   const isToken = useSelector(selectToken);
-  return <Header>{isToken ? <UserMenu /> : <AuthNav />}</Header>;
+  return (
+    <header className={scss.header}>
+      <div className={scss.containerHeader}>
+        <div className={scss.logo}>PhoneBook</div>
+        {isToken ? <UserMenu /> : <AuthNav />}
+      </div>
+    </header>
+  );
 };

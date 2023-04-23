@@ -2,11 +2,14 @@ import { useState } from 'react';
 import React from 'react';
 
 import { nanoid } from 'nanoid';
-import css from './ContactForm.module.scss';
+
 import { useDispatch, useSelector } from 'react-redux';
 import { selectContacts } from 'redux/contacts/contactSelector';
 
 import { addContactsThunk } from 'redux/contacts/contacts-thunk';
+
+//import scss from '../LoginForm/LoginForm.module.scss';
+import scss from '../../style/baseForm.module.scss';
 
 export const ContactForm = () => {
   const [name, setName] = useState('');
@@ -46,39 +49,48 @@ export const ContactForm = () => {
   const numberInputId = nanoid();
 
   return (
-    <form className={css.form} action="" onSubmit={handleSubmit}>
-      <label htmlFor={nameInputId} className={css.form__label}>
-        Name
-      </label>
-      <input
-        id={nameInputId}
-        onChange={handleChange}
-        name="name"
-        value={name}
-        type="text"
-        pattern="^[a-zA-Zа-яА-Я]+(([' -][a-zA-Zа-яА-Я ])?[a-zA-Zа-яА-Я]*)*$"
-        title="Name may contain only letters, apostrophe, dash and spaces. For example Adrian, Jacob Mercer, Charles de Batz de Castelmore d'Artagnan"
-        required
-        className={css.form__input}
-      />
-      <label htmlFor={numberInputId} className={css.form__label}>
-        Number
-      </label>
-      <input
-        id={numberInputId}
-        onChange={handleChange}
-        name="number"
-        value={number}
-        type="tel"
-        pattern="\+?\d{1,4}?[-.\s]?\(?\d{1,3}?\)?[-.\s]?\d{1,4}[-.\s]?\d{1,4}[-.\s]?\d{1,9}"
-        title="Phone number must be digits and can contain spaces, dashes, parentheses and can start with +"
-        required
-        className={css.form__input}
-      />
-      <button className={css.form__button} type="submit">
-        Add contact
-      </button>
-    </form>
+    <>
+      <div className={scss.wrapperForm}>
+        <form className={scss.form} action="" onSubmit={handleSubmit}>
+          <div className={scss.contentForm__box}>
+            <input
+              id={nameInputId}
+              onChange={handleChange}
+              name="name"
+              value={name}
+              type="text"
+              pattern="^[a-zA-Zа-яА-Я]+(([' -][a-zA-Zа-яА-Я ])?[a-zA-Zа-яА-Я]*)*$"
+              title="Name may contain only letters, apostrophe, dash and spaces. For example Adrian, Jacob Mercer, Charles de Batz de Castelmore d'Artagnan"
+              required
+              className={scss.input}
+            />
+            <label htmlFor={nameInputId} className={scss.label}>
+              Name
+            </label>
+          </div>
+          <div className={scss.contentForm__box}>
+            <input
+              id={numberInputId}
+              onChange={handleChange}
+              name="number"
+              value={number}
+              type="tel"
+              pattern="\+?\d{1,4}?[-.\s]?\(?\d{1,3}?\)?[-.\s]?\d{1,4}[-.\s]?\d{1,4}[-.\s]?\d{1,9}"
+              title="Phone number must be digits and can contain spaces, dashes, parentheses and can start with +"
+              required
+              className={scss.input}
+            />
+            <label htmlFor={numberInputId} className={scss.label}>
+              Number
+            </label>
+          </div>
+
+          <button className={scss.button} type="submit">
+            Add contact
+          </button>
+        </form>
+      </div>
+    </>
   );
 };
 export default ContactForm;

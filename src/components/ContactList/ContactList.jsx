@@ -1,18 +1,16 @@
 import React from 'react';
-import css from './ContactList.module.scss';
 import { useSelector, useDispatch } from 'react-redux';
 import { useEffect } from 'react';
-
 import {
   deleteContactsThunk,
   getContactsThunk,
 } from 'redux/contacts/contacts-thunk';
 import { selectFilteredContacts } from 'redux/contacts/contactSelector';
 
+import scss from './ContactList.module.scss';
+
 function ContactList() {
   const contacts = useSelector(selectFilteredContacts);
-  //const filt = useSelector(state => state);
-  // console.log(filt);
 
   const dispatch = useDispatch();
   const delateContact = id => dispatch(deleteContactsThunk(id));
@@ -22,12 +20,12 @@ function ContactList() {
   }, [dispatch]);
 
   const contact = contacts.map(({ name, number, id }) => (
-    <li key={id} className={css.item}>
-      <p className={css.item__text}>
+    <li key={id} className={scss.item}>
+      <p className={scss.item__text}>
         {name} : {number}
       </p>
       <button
-        className={css.item__button}
+        className={scss.item__button}
         onClick={() => delateContact(id)}
         type="button"
       >
@@ -36,7 +34,7 @@ function ContactList() {
     </li>
   ));
 
-  return <ul className={css.list}>{contact}</ul>;
+  return <ul className={scss.wrapperList}>{contact}</ul>;
 }
 
 export default ContactList;

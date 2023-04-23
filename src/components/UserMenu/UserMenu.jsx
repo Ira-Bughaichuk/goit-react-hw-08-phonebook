@@ -2,7 +2,7 @@ import { useDispatch, useSelector } from 'react-redux';
 
 import { logOutThunk } from 'redux/auth/auth-thunk';
 import { selectUser } from './../../redux/auth/auth-selector';
-import { Wrapper } from './UserMenu.styled';
+import scss from './UserMenu.module.scss';
 import { token } from 'services/authService';
 
 export const UserMenu = () => {
@@ -15,11 +15,11 @@ export const UserMenu = () => {
   };
 
   return (
-    <Wrapper>
-      <p>Welcome, {user.email}</p>
-      <button type="button" onClick={logOut}>
+    <div className={scss.menu}>
+      <p className={scss.menu__user}>Welcome, {user.email}</p>
+      <button className={scss.menu__btn} type="button" onClick={logOut}>
         Logout
       </button>
-    </Wrapper>
+    </div>
   );
 };

@@ -16,6 +16,7 @@ export const registerThunk = createAsyncThunk(
       //dispatch(loginThunk(omit(credentials, ['password', 'email'])));
       return data;
     } catch (error) {
+      //alert('Validate error');
       return rejectWithValue(error.message);
     }
   }

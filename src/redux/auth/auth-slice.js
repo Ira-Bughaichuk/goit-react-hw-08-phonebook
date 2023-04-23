@@ -53,6 +53,7 @@ const authSlice = createSlice({
         console.log(payload);
         state.isLoading = false;
         state.user = payload;
+        //console.log(payload);
         state.token = null;
       })
       .addCase(refreshUserThunk.pending, handlePending)

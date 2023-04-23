@@ -1,0 +1,23 @@
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: 20px 100px;
+  background: transparent;
+  z-index: 99;
+}
+.containerHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  font-family: inherit;
+  font-size: 26px;
+  font-weight: 600;
+  color: antiquewhite;
+  user-select: none;
+  padding-right: 15px;
+}
