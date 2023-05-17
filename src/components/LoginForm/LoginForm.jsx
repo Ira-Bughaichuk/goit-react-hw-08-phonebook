@@ -2,10 +2,8 @@ import React, { useReducer } from 'react';
 import { useDispatch } from 'react-redux';
 import { Link } from 'react-router-dom';
 import { loginThunk } from '../../redux/auth/auth-thunk';
-
 import LockIcon from '@mui/icons-material/Lock';
 import EmailIcon from '@mui/icons-material/Email';
-
 import scss from '../../style/baseForm.module.scss';
 
 const initialState = {

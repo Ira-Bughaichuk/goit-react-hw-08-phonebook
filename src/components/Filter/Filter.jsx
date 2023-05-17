@@ -1,15 +1,11 @@
 import React from 'react';
-
 import { useSelector, useDispatch } from 'react-redux';
 import { selectFilter } from 'redux/contacts/contactSelector';
 import { filterContactsAction } from 'redux/contacts/contacts-slice';
-//import scss from '../LoginForm/LoginForm.module.scss';
 import scss from '../../style/baseForm.module.scss';
+
 const Filter = () => {
   const filterValue = useSelector(selectFilter);
-  const filt = useSelector(state => state.contacts.filter);
-  //console.log(filt);
-  //console.log(filterValue);
   const dispatch = useDispatch();
   return (
     <section className={scss.section}>

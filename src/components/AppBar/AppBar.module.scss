@@ -3,9 +3,12 @@
   top: 0;
   left: 0;
   width: 100%;
-  padding: 20px 100px;
+  padding: 20px 5px;
   background: transparent;
   z-index: 99;
+  @media screen and (min-width: 480px) {
+    padding: 20px 40px;
+  }
 }
 .containerHeader {
   display: flex;
@@ -20,4 +23,9 @@
   color: antiquewhite;
   user-select: none;
   padding-right: 15px;
+
+  @media screen and (max-width: 479px) {
+    font-size: 22px;
+    padding-right: 8px;
+  }
 }

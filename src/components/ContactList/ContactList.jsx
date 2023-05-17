@@ -21,9 +21,8 @@ function ContactList() {
 
   const contact = contacts.map(({ name, number, id }) => (
     <li key={id} className={scss.item}>
-      <p className={scss.item__text}>
-        {name} : {number}
-      </p>
+      <p className={scss.item__text}>{name}</p>
+      <p className={scss.item__text}>{number}</p>
       <button
         className={scss.item__button}
         onClick={() => delateContact(id)}
@@ -34,7 +33,11 @@ function ContactList() {
     </li>
   ));
 
-  return <ul className={scss.wrapperList}>{contact}</ul>;
+  return (
+    <div className={scss.overList}>
+      <ul className={scss.wrapperList}>{contact}</ul>
+    </div>
+  );
 }
 
 export default ContactList;

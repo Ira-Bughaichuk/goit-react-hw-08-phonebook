@@ -8,7 +8,7 @@ import { token } from 'services/authService';
 export const UserMenu = () => {
   const dispatch = useDispatch();
   const user = useSelector(selectUser);
-  console.log(user);
+
   const logOut = () => {
     dispatch(logOutThunk());
     token.unSet();
@@ -18,7 +18,7 @@ export const UserMenu = () => {
     <div className={scss.menu}>
       <p className={scss.menu__user}>Welcome, {user.email}</p>
       <button className={scss.menu__btn} type="button" onClick={logOut}>
-        Logout
+        Log Out
       </button>
     </div>
   );

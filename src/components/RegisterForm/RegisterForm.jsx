@@ -1,12 +1,10 @@
 import { useReducer } from 'react';
 import { useDispatch } from 'react-redux';
 import { registerThunk } from '../../redux/auth/auth-thunk';
-
 import { Link } from 'react-router-dom';
 import LockIcon from '@mui/icons-material/Lock';
 import EmailIcon from '@mui/icons-material/Email';
 import PersonIcon from '@mui/icons-material/Person';
-
 import scss from '../../style/baseForm.module.scss';
 
 const initialState = {
@@ -39,7 +37,6 @@ const RegisterForm = () => {
   };
   const handleSubmit = e => {
     e.preventDefault();
-    console.log(state);
     dispatch(registerThunk(state));
     dispatchChange({ type: 'reset' });
   };
@@ -59,8 +56,6 @@ const RegisterForm = () => {
               value={name}
               onChange={handleChange}
               required
-              pattern="^[a-zA-Z]+\s[a-zA-Z]+$"
-              title="Username must be two words separated by space."
               className={scss.input}
             />
             <label className={scss.label}>Username</label>
@@ -86,10 +81,9 @@ const RegisterForm = () => {
               value={password}
               onChange={handleChange}
               required
-              minlength="7"
-              maxlength="12"
-              pattern="^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?!.*\s).*$"
-              title="Please include at least 1 uppercase character, 1 lowercase character, and 1 number."
+              minLength="7"
+              maxLength="12"
+              title="Please enter at least 5 characters"
               className={scss.input}
             />
             <label className={scss.label}>Password</label>

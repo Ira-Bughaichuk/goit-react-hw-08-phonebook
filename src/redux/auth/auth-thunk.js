@@ -6,17 +6,15 @@ import {
   refreshUserService,
   token,
 } from '../../services/authService';
-//import { omit } from 'lodash';
 
 export const registerThunk = createAsyncThunk(
   'auth/signUp',
   async (credentials, { rejectWithValue, dispatch }) => {
     try {
       const data = await registerService(credentials);
-      //dispatch(loginThunk(omit(credentials, ['password', 'email'])));
       return data;
     } catch (error) {
-      //alert('Validate error');
+      alert('Check your details password must be at least 7 characters');
       return rejectWithValue(error.message);
     }
   }
@@ -40,6 +38,7 @@ export const logOutThunk = createAsyncThunk(
     try {
       await logOutService();
       token.unSet();
+      alert('You have been logged out successfully');
     } catch (error) {
       return rejectWithValue(error.message);
     }

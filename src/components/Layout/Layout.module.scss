@@ -1,7 +1,5 @@
 .container {
   position: relative;
-  //top: 100px;
-  //left: 0;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -10,10 +8,11 @@
   background: url(../../image/Saturn.jpg), no-repeat;
   background-size: cover;
   background-position: center;
-  padding: 0 20px;
+  padding: 0 10px;
 
   @media screen and (min-width: 768px) {
     min-width: 768px;
+    padding: 0 20px;
   }
   @media screen and (min-width: 1280px) {
     min-width: 1280px;

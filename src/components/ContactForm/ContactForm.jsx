@@ -1,14 +1,9 @@
 import { useState } from 'react';
 import React from 'react';
-
 import { nanoid } from 'nanoid';
-
 import { useDispatch, useSelector } from 'react-redux';
 import { selectContacts } from 'redux/contacts/contactSelector';
-
 import { addContactsThunk } from 'redux/contacts/contacts-thunk';
-
-//import scss from '../LoginForm/LoginForm.module.scss';
 import scss from '../../style/baseForm.module.scss';
 
 export const ContactForm = () => {
@@ -51,7 +46,7 @@ export const ContactForm = () => {
   return (
     <>
       <div className={scss.wrapperForm}>
-        <form className={scss.form} action="" onSubmit={handleSubmit}>
+        <form onSubmit={handleSubmit}>
           <div className={scss.contentForm__box}>
             <input
               id={nameInputId}

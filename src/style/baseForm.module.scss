@@ -1,13 +1,23 @@
 //d_ddddd1230@ukr.net
 .wrapperForm {
-  width: 400px;
+  width: 250px;
   height: auto;
   border: 2px solid rgba(255, 255, 255, 0.5);
   border-radius: 20px;
   overflow: hidden;
   background: transparent;
-  backdrop-filter: blur(20px);
-  padding: 20px 40px;
+
+  padding: 10px 20px;
+
+  @media screen and (max-width: 479px) {
+    width: 250px;
+    padding: 10px 20px;
+  }
+  @media screen and (min-width: 480px) {
+    width: 400px;
+    backdrop-filter: blur(10px);
+    padding: 20px 40px;
+  }
 }
 .title {
   font-size: 24px;
