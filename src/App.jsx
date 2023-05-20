@@ -21,7 +21,7 @@ export const App = () => {
     .then(() => {
       navigate('/contacts');
     })
-  }, [dispatch]);
+  }, [dispatch, navigate]);
 
   return (
     <>
@@ -39,4 +39,3 @@ export const App = () => {
     </>
   );
 };
-//Yyyyyyyyyy@i.ua
